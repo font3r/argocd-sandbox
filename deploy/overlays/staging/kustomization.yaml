@@ -1,0 +1,5 @@
+namespace: example-project-staging
+resources:
+  - ../../base
+patches:
+  - path: deployment.yaml

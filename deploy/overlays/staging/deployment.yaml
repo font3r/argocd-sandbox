@@ -1,0 +1,6 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-sample-microservice-deploymentasd
+spec:
+  replicas: 2

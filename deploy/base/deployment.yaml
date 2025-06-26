@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-sample-microservice-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-sample-microservice
+  template:
+    metadata:
+      labels:
+        app: go-sample-microservice
+    spec:
+      containers:
+        - name: go-sample-microservice
+          image: go-sample-microservice:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+              name: http
