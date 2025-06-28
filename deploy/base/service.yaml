@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: go-sample-microservice-service
+  name: go-sample-microservice
 spec:
   ports:
     - protocol: TCP
@@ -9,3 +9,4 @@ spec:
       targetPort: http
   selector:
     app: go-sample-microservice
+  internalTrafficPolicy: Local

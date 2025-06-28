@@ -17,6 +17,11 @@ func main() {
 		io.WriteString(w, "Hello, World!")
 	})
 
+	http.HandleFunc("/info", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Printf("[%s] Received /info - 200 OK\n", time.Now().Format("2006-01-02T15:04:05Z07:00"))
+		io.WriteString(w, fmt.Sprintf("%s/%s", os.Getenv("POD_NAMESPACE"), os.Getenv("POD_NAME")))
+	})
+
 	fmt.Printf("Starting server at %d\n", port)
 
 	err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
