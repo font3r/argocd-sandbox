@@ -1,0 +1,5 @@
+namespace: example-project-production
+resources:
+  - ../../base
+patches:
+  - path: deployment.yaml
