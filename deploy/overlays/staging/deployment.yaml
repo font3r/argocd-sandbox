@@ -3,4 +3,4 @@ kind: Deployment
 metadata:
   name: go-sample-microservice
 spec:
-  replicas: 3
+  replicas: 5
